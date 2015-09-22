@@ -21,7 +21,7 @@ var variants = {
 var GithubLink = React.createClass({
   render: function () {
     return (<iframe
-      className="gh-star" src="https://ghbtns.com/github-btn.html?user=zanjs&repo=react-formation&type=star&count=true&size=large"
+      className="gh-star" src="https://ghbtns.com/github-btn.html?user=panli-com&repo=doc-package-panli&type=star&count=true&size=large"
       frameborder="0"
       scrolling="0"
       width="160px"
