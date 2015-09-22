@@ -1,5 +1,5 @@
 var React = require('react/addons');
-var Login = require('./pages/login/index.jsx');
+var Login = require('./pages/home/index.jsx');
 var {Link} = require('react-router');
 
 function generateVariant(propsets) {
@@ -14,14 +14,14 @@ function generateVariant(propsets) {
 
 var variants = {
   showLabels: [true, false],
-  signUpMessage: ['Sign up', 'Join', 'Join us', 'One. Of. Us.'],
+  signUpMessage: ['Sign up', 'Join', 'Join us', 'zan.'],
   buttonColor: ['#00BE94', '#69A0FC']
 };
 
 var GithubLink = React.createClass({
   render: function () {
     return (<iframe
-      className="gh-star" src="https://ghbtns.com/github-btn.html?user=k88hudson&repo=react-formation&type=star&count=true&size=large"
+      className="gh-star" src="https://ghbtns.com/github-btn.html?user=zanjs&repo=react-formation&type=star&count=true&size=large"
       frameborder="0"
       scrolling="0"
       width="160px"
@@ -46,20 +46,10 @@ module.exports = React.createClass({
 
     return (<div className="home">
       <header>
-        <h1>Build robust, testable forms in minutes<br/>with <strong>React Formation</strong></h1>
-        <p><Link to="examples">See the guide</Link></p>
+        <h1>Panli.com<br/>with <strong>前端开发小组</strong></h1>
+        <p><Link to="examples">api 查询</Link></p>
       </header>
-
-      <Login {...this.state.variants} />
       <footer>
-        <p>This login form was built in <a href="https://github.com/k88hudson/react-formation/blob/gh-pages/examples/pages/login/index.jsx">under 100 lines of code</a> and includes:</p>
-        <ul>
-          <li>Advanced custom validations for each field</li>
-          <li>Password strength testing</li>
-          <li>Pre-submit validation</li>
-          <li>Smart display of error messages</li>
-          <li>Hooks for A/B testing variations (<a href="#" onClick={this.refreshTest}>try refreshing!</a>)</li>
-        </ul>
         <p><GithubLink /></p>
       </footer>
     </div>);

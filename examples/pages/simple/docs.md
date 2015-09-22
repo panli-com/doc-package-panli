@@ -1,103 +1,30 @@
-# Get started
+# 获取组件包
 
 ## Install
 
-You can install React Formation from npm by running `npm install react-formation`. If you are using common js, you can require it like this:
+如果您电脑安装了 `Node`  直接找一个目录下 运行命令终端 `npm install panli-package`
 
-```jsx
-var Formation = require('react-formation');
+我们推荐您使用 npm 包管理器 ,毕竟他逼格很高。
+
+如果您电脑已经安装了 `git`
+
+```
+  git clone https://github.com/panli-com/depository-panli.git          // PC端
+  git clone https://github.com/panli-com/depository-panli-webapp.git   // 移动端
 ```
 
-## Create a Form
+如果你想直接下载压缩包 可以点击这里
+- [PC端下载](https://github.com/panli-com/depository-panli/archive/master.zip)
+- [移动端下载](https://github.com/panli-com/depository-panli-webapp/archive/master.zip)
 
-First, let's define the structure of your form. You can do that by using `CreateForm` just like how you would use `React.createClass`, including a `render` function:
+## CDN 引入
 
-```jsx{3}
-var Formation = require('react-formation');
-
-var Form = Formation.CreateForm({
-  render: function () {
-    return (<form>
-
-      <label>Name</label>
-      <input type="text" name="name" />
-
-      <label>Email</label>
-      <input type="text" name="email" />
-
-      <button>Submit</button>
-
-    </form>);
-  }
-});
+```
+<script src="http://pan.nnn.li/dist/common/js/panli.min.js"></script>  // PC端  
+<script src="http://pan.nnn.li/dist/webapp/common/js/panli.min.js"></script> // 移动端
 ```
 
-Next, add **a `getSchema`** method that returns a schema defining all the fields in the form, and link corresponding inputs with `this.linkField`:
+## 小组成员
 
-```jsx{3-6,11,14}
-var Form = Formation.CreateForm({
-
-  getSchema: function () {
-    return {
-      name: {required: true}
-      email: {type: 'email'}
-    };
-  },
-
-  render: function () {
-    return (<form>
-
-      <label>Name</label>
-      <input type="text" valueLink={this.linkField('name')} />
-
-      <label>Email</label>
-      <input type="text" valueLink={this.linkField('email')} />
-
-      <button>Submit</button>
-
-    </form>);
-  }
-
-});
-```
-
-Finally, add **an onSuccess** callback that gets called on a successful submit, and add `this.submitForm` as a callback to any submit buttons.
-
-```jsx{8-10,21}
-var Form = Formation.CreateForm({
-
-  getSchema: function () {
-    return {
-      name: {required: true}
-      email: {type: 'email'}
-    };
-  },
-
-  onSuccess: function (data) {
-    console.log(data);
-  },
-
-  render: function () {
-    return (<form>
-
-      <label>Name</label>
-      <input type="text" valueLink={this.linkField('name')} />
-
-      <label>Email</label>
-      <input type="text" valueLink={this.linkField('email')} />
-
-      <button onClick={this.submitForm}>Submit</button>
-
-    </form>);
-  }
-
-});
-```
-
-## Rendering a Form
-
-You can use your new `Form` class just like you would any other React element, including passing props. For example, if you wanted to render it directly into `document.body`:
-
-```jsx
-React.render(<Form />, document.body);
-```
++ zan  [blog](http://blog.zanjs.com)
++ 等等
